@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎃 Halloween Runner - Spooky Endless Adventure</title>
+    <meta name="description"
+        content="A spooky Halloween endless runner game with three unique characters, candy collection, and terrifying obstacles!">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Character Selection Screen -->
+    <div id="character-select" class="screen active">
+        <!-- Scattered Halloween Decorations -->
+        <div class="halloween-decor decor-1">🎃</div>
+        <div class="halloween-decor decor-2">👻</div>
+        <div class="halloween-decor decor-3">🦇</div>
+        <div class="halloween-decor decor-4">💀</div>
+        <div class="halloween-decor decor-5">🕷️</div>
+        <div class="halloween-decor decor-6">🕸️</div>
+        <div class="halloween-decor decor-7">🎃</div>
+        <div class="halloween-decor decor-8">👻</div>
+        <div class="halloween-decor decor-9">🦇</div>
+        <div class="halloween-decor decor-10">💀</div>
+        <div class="halloween-decor decor-11">🕷️</div>
+        <div class="halloween-decor decor-12">🍬</div>
+        <div class="halloween-decor decor-13">🐉</div>
+        <div class="halloween-decor decor-14">👹</div>
+        <div class="halloween-decor decor-15">🌙</div>
+
+        <div class="select-container">
+            <h1 class="title">🎃 Halloween Runner 🎃</h1>
+            <p class="subtitle">Choose Your Character</p>
+
+            <div class="characters">
+                <div class="character-card" data-character="skeleton">
+                    <div class="character-preview" id="skeleton-preview"></div>
+                    <h3>💀 Gross Skeleton</h3>
+                    <p>Creepy bones in dungarees</p>
+                </div>
+
+                <div class="character-card" data-character="kitty">
+                    <div class="character-preview" id="kitty-preview"></div>
+                    <h3>🐱 Kitty Cat</h3>
+                    <p>Cute in pink dress</p>
+                </div>
+
+                <div class="character-card" data-character="miles">
+                    <div class="character-preview" id="miles-preview"></div>
+                    <h3>🕷️ Miles Morales</h3>
+                    <p>Spider-Man costume</p>
+                </div>
+            </div>
+
+            <div class="controls-info">
+                <h4>🎮 Controls</h4>
+                <p><span class="key">←</span> <span class="key">→</span> Switch Lanes | <span class="key">↑</span> Jump
+                    | <span class="key">↓</span> Slide</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="game-ui">
+            <div class="score-container">
+                <span class="candy-icon">🍬</span>
+                <span id="score">0</span>
+            </div>
+            <div class="distance-container">
+                <span>📏</span>
+                <span id="distance">0</span>m
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Dragon Power-up Indicator -->
+        <div id="dragon-indicator" class="hidden">
+            <span>🐉 Dragon Lift! 🐉</span>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over" class="screen">
+        <div class="game-over-container">
+            <h1 class="game-over-title">💀 GAME OVER 💀</h1>
+            <div class="final-stats">
+                <div class="stat">
+                    <span class="stat-label">Candies</span>
+                    <span class="stat-value" id="final-score">0</span>
+                    <span class="candy-icon">🍬</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Distance</span>
+                    <span class="stat-value" id="final-distance">0</span>
+                    <span>m</span>
+                </div>
+            </div>
+            <button id="play-again" class="play-btn">🎃 Play Again 🎃</button>
+            <button id="change-character" class="change-btn">Change Character</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/characters.js"></script>
+    <script src="js/obstacles.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,812 @@
+/* ============================================
+   🎃 HALLOWEEN RUNNER - STYLES
+   ============================================ */
+
+:root {
+    --bg-dark: #0a0612;
+    --bg-purple: #1a0a2e;
+    --accent-orange: #ff6b35;
+    --accent-purple: #9b4dca;
+    --accent-green: #4ade80;
+    --text-light: #f0e6ff;
+    --text-muted: #a78bba;
+    --candy-pink: #ff69b4;
+    --candy-blue: #00d4ff;
+    --candy-yellow: #ffd700;
+    --shadow-glow: 0 0 30px rgba(155, 77, 202, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-purple) 50%, #2d1b4e 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    color: var(--text-light);
+}
+
+/* ============================================
+   SCREENS
+   ============================================ */
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* ============================================
+   CHARACTER SELECTION SCREEN - ENHANCED
+   ============================================ */
+
+#character-select {
+    background:
+        radial-gradient(ellipse at top, rgba(155, 77, 202, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-purple) 100%);
+    animation: bgPulse 8s ease-in-out infinite;
+    overflow: hidden;
+    position: relative;
+}
+
+/* SCATTERED HALLOWEEN DECORATIONS - All over the screen */
+
+/* Top left pumpkin */
+#character-select::before {
+    content: '🎃';
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    font-size: 3rem;
+    animation: floatBounce 4s ease-in-out infinite;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Bottom right ghost */
+#character-select::after {
+    content: '👻';
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    font-size: 3.5rem;
+    animation: floatBounce 5s ease-in-out infinite 0.5s;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes floatSpin {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(15deg);
+    }
+}
+
+@keyframes floatWiggle {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-3deg);
+    }
+
+    25% {
+        transform: translate(5px, -10px) rotate(3deg);
+    }
+
+    50% {
+        transform: translate(0, -20px) rotate(-3deg);
+    }
+
+    75% {
+        transform: translate(-5px, -10px) rotate(3deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+@keyframes drift {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(10px, -5px);
+    }
+
+    50% {
+        transform: translate(0, -10px);
+    }
+
+    75% {
+        transform: translate(-10px, -5px);
+    }
+}
+
+@keyframes bgPulse {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.1);
+    }
+}
+
+/* SCATTERED HALLOWEEN DECORATIONS - positioned all over screen */
+.halloween-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Top left area */
+.decor-1 {
+    top: 5%;
+    left: 3%;
+    font-size: 3rem;
+    animation: floatBounce 4s ease-in-out infinite;
+}
+
+.decor-2 {
+    top: 15%;
+    left: 15%;
+    font-size: 2.5rem;
+    animation: floatWiggle 5s ease-in-out infinite 0.3s;
+}
+
+.decor-3 {
+    top: 8%;
+    left: 30%;
+    font-size: 2rem;
+    animation: floatSpin 3.5s ease-in-out infinite 0.5s;
+}
+
+/* Top right area */
+.decor-4 {
+    top: 5%;
+    right: 5%;
+    font-size: 2.8rem;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.decor-5 {
+    top: 18%;
+    right: 18%;
+    font-size: 2rem;
+    animation: drift 6s ease-in-out infinite;
+}
+
+.decor-6 {
+    top: 10%;
+    right: 35%;
+    font-size: 2.5rem;
+    animation: floatBounce 4.5s ease-in-out infinite 0.7s;
+}
+
+/* Middle left */
+.decor-7 {
+    top: 40%;
+    left: 2%;
+    font-size: 2.8rem;
+    animation: floatWiggle 5.5s ease-in-out infinite 1s;
+}
+
+.decor-8 {
+    top: 55%;
+    left: 8%;
+    font-size: 2.3rem;
+    animation: floatSpin 4s ease-in-out infinite 0.2s;
+}
+
+/* Middle right */
+.decor-9 {
+    top: 38%;
+    right: 3%;
+    font-size: 2rem;
+    animation: drift 5s ease-in-out infinite 0.8s;
+}
+
+.decor-10 {
+    top: 52%;
+    right: 12%;
+    font-size: 2.5rem;
+    animation: pulse 4s ease-in-out infinite 0.5s;
+}
+
+/* Bottom left */
+.decor-11 {
+    bottom: 20%;
+    left: 5%;
+    font-size: 2.2rem;
+    animation: floatBounce 5s ease-in-out infinite 1.2s;
+}
+
+.decor-12 {
+    bottom: 8%;
+    left: 18%;
+    font-size: 2.5rem;
+    animation: floatWiggle 4s ease-in-out infinite;
+}
+
+/* Bottom right */
+.decor-13 {
+    bottom: 15%;
+    right: 6%;
+    font-size: 3rem;
+    animation: floatSpin 6s ease-in-out infinite 0.3s;
+}
+
+.decor-14 {
+    bottom: 5%;
+    right: 25%;
+    font-size: 2.3rem;
+    animation: drift 4.5s ease-in-out infinite 0.9s;
+}
+
+/* Center areas (behind content) */
+.decor-15 {
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    animation: pulse 5s ease-in-out infinite;
+    opacity: 0.25;
+}
+
+.select-container {
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 1200px;
+    position: relative;
+    z-index: 5;
+}
+
+.title {
+    font-family: 'Creepster', cursive;
+    font-size: 4.5rem;
+    color: var(--accent-orange);
+    text-shadow:
+        0 0 10px var(--accent-orange),
+        0 0 20px var(--accent-orange),
+        0 0 40px var(--accent-purple),
+        4px 4px 0 #000;
+    margin-bottom: 0.3rem;
+    animation: titleFloat 3s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.characters {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+/* LARGER CHARACTER CARDS WITH HALLOWEEN DECORATIONS */
+.character-card {
+    background: linear-gradient(145deg, rgba(26, 10, 46, 0.95), rgba(45, 27, 78, 0.95));
+    border: 3px solid var(--accent-purple);
+    border-radius: 25px;
+    padding: 1.5rem 2rem 2rem;
+    width: 280px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: visible;
+}
+
+/* Corner decorations */
+.character-card::before {
+    content: '🎃';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 2rem;
+    animation: bobble 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5));
+}
+
+.character-card::after {
+    content: '🕸️';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.8rem;
+    animation: bobble 2.5s ease-in-out infinite reverse;
+    opacity: 0.8;
+}
+
+@keyframes bobble {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+/* Different decorations for each card */
+.character-card:nth-child(1)::before {
+    content: '💀';
+}
+
+.character-card:nth-child(1)::after {
+    content: '🦴';
+}
+
+.character-card:nth-child(2)::before {
+    content: '🎀';
+}
+
+.character-card:nth-child(2)::after {
+    content: '🐱';
+}
+
+.character-card:nth-child(3)::before {
+    content: '🕷️';
+}
+
+.character-card:nth-child(3)::after {
+    content: '🕸️';
+}
+
+.character-card:hover {
+    transform: translateY(-15px) scale(1.08);
+    border-color: var(--accent-orange);
+    box-shadow:
+        0 0 40px rgba(255, 107, 53, 0.4),
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(255, 107, 53, 0.1);
+}
+
+.character-card.selected {
+    border-color: var(--accent-green);
+    box-shadow:
+        0 0 40px rgba(74, 222, 128, 0.5),
+        0 0 80px rgba(74, 222, 128, 0.3);
+    animation: selectedPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes selectedPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 40px rgba(74, 222, 128, 0.5), 0 0 80px rgba(74, 222, 128, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 60px rgba(74, 222, 128, 0.7), 0 0 100px rgba(74, 222, 128, 0.4);
+    }
+}
+
+/* LARGER CHARACTER PREVIEW */
+.character-preview {
+    width: 180px;
+    height: 220px;
+    margin: 0 auto 1rem;
+    border-radius: 15px;
+    background:
+        radial-gradient(ellipse at center, rgba(155, 77, 202, 0.2) 0%, transparent 70%),
+        rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid rgba(155, 77, 202, 0.3);
+    overflow: hidden;
+}
+
+/* Spotlight effect on preview */
+.character-preview::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 100px;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-50%) rotate(25deg);
+    animation: spotlight 3s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.character-card h3 {
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-orange);
+    text-shadow: 2px 2px 0 #000;
+}
+
+.character-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.controls-info {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.2rem 2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(155, 77, 202, 0.4);
+    display: inline-block;
+}
+
+.controls-info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-orange);
+    font-family: 'Creepster', cursive;
+    font-size: 1.3rem;
+}
+
+.key {
+    display: inline-block;
+    background: linear-gradient(145deg, #2d1b4e, #1a0a2e);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--accent-purple);
+    margin: 0 0.3rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   GAME SCREEN
+   ============================================ */
+
+#game-screen {
+    background: var(--bg-dark);
+}
+
+#gameCanvas {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.game-ui {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    z-index: 100;
+}
+
+.score-container,
+.distance-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid var(--accent-purple);
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-glow);
+}
+
+.candy-icon {
+    font-size: 1.5rem;
+    animation: candySpin 2s linear infinite;
+}
+
+@keyframes candySpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#dragon-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, rgba(255, 107, 53, 0.9), rgba(155, 77, 202, 0.9));
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: dragonPulse 0.5s ease-in-out infinite;
+    z-index: 100;
+}
+
+@keyframes dragonPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+#dragon-indicator.hidden {
+    display: none;
+}
+
+/* ============================================
+   GAME OVER SCREEN
+   ============================================ */
+
+#game-over {
+    background: rgba(10, 6, 18, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.game-over-container {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(145deg, rgba(26, 10, 46, 0.95), rgba(45, 27, 78, 0.95));
+    border: 3px solid var(--accent-orange);
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(255, 107, 53, 0.3);
+    animation: gameOverAppear 0.5s ease-out;
+    position: relative;
+}
+
+/* Halloween decorations on game over */
+.game-over-container::before {
+    content: '💀';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    animation: skullBounce 1s ease-in-out infinite;
+}
+
+@keyframes skullBounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes gameOverAppear {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.game-over-title {
+    font-family: 'Creepster', cursive;
+    font-size: 3.5rem;
+    color: var(--accent-orange);
+    text-shadow:
+        0 0 10px var(--accent-orange),
+        0 0 20px var(--accent-orange),
+        3px 3px 0 #000;
+    margin-bottom: 2rem;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+.final-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--accent-purple);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--candy-yellow);
+}
+
+.play-btn,
+.change-btn {
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+}
+
+.play-btn {
+    background: linear-gradient(145deg, var(--accent-orange), #e55a2b);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.6);
+}
+
+.change-btn {
+    background: transparent;
+    color: var(--text-muted);
+    border: 2px solid var(--text-muted);
+}
+
+.change-btn:hover {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .characters {
+        gap: 1.5rem;
+    }
+
+    .character-card {
+        width: 240px;
+        padding: 1.2rem 1.5rem 1.5rem;
+    }
+
+    .character-preview {
+        width: 150px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .characters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character-card {
+        width: 260px;
+    }
+
+    .game-ui {
+        gap: 1rem;
+    }
+
+    .score-container,
+    .distance-container {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
