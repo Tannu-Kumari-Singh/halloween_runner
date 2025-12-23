@@ -84,7 +84,7 @@ No complex build steps required!
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/halloween-runner.git
+    git clone https://github.com/Tannu-Kumari-Singh/halloween-runner.git
     ```
 2.  **Navigate to the folder:**
     ```bash
@@ -113,3 +113,4 @@ Got a spooky idea? We'd love to hear it!
 **Happy Halloween! 🎃**
 
 </div>
+
